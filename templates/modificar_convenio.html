@@ -1,0 +1,10 @@
+﻿{include file="cabecera.html" title="Modificar Convenios"}
+{$f1}
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('nro_convenio'); f1.add( Validate.Presence ); f1.add( Validate.Numericality );
+	var f2 = new LiveValidation('ejecutor'); f2.add( Validate.Presence ); 
+	var f3 = new LiveValidation('monto'); f3.add( Validate.Presence ); 
+</script>
+{/literal}

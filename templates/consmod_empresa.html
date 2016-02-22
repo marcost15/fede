@@ -1,0 +1,44 @@
+﻿{include file="cabecera.html" title=" Consultas de Empresas"}
+
+<h4><B><I>BUSQUEDA DE LAS EMPRESAS</I></B></h4>
+{$f1}
+
+{if $datos}
+<h4>Emprsas Solicitadas</h4>
+<div id="resultados">
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr>
+		<th>RIF</th>
+		<th>Nombre</th>
+		<th>Telefono</th>
+		<th>Representante</th>
+		<th>Cedula</th>
+		<th>Telefono</th>
+		<th>Correo</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+	</tr>
+<thead>
+<tbody>
+	{section name=p loop=$datos}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$datos[p].rif}</td>
+		<td>{$datos[p].nombre}</td>
+		<td>{$datos[p].tlf}</td>
+		<td>{$datos[p].repre_legal}</td>
+		<td>{$datos[p].cedula}</td>
+		<td>{$datos[p].tlf_repre}</td>
+		<td>{$datos[p].correo}</td>
+		<td><a href="modificar_empresa.php?id={$datos[p].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+		<td><a href="?id={$datos[p].id}&func=delete"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib("<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+{else}
+	{if $error1 eq 2} 
+		<h3>NO SE ENCONTRÓ EMPRESA CON ESOS PARAMETROS, VERIFIQUE...</h3>
+	{/if}
+{/if}
+{include file="pie.html"}

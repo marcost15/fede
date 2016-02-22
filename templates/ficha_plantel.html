@@ -1,0 +1,305 @@
+{include file="cabecera.html" title=" Ficha Plantel"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+<h3>DATOS DEL PLANTEL</h3>
+<table width="100%" border="1">
+    <tr>
+      <td><strong>Codigo DEA </strong></td>
+      <td>{$ficha.cod_dea}</td>
+      <td><strong>Dependencia</strong></td>
+      <td>{$ficha.dependencia}</td>
+    </tr>
+    <tr>
+	   <td><strong>Nombre</strong></td>
+      <td>{$ficha.nombre}</td>
+      <td><strong>Codigo Dependencia</strong></td>
+      <td>{$ficha.cod_dependencia}</td>
+    </tr>
+    <tr>
+	  <td><strong>Codigo Estadistico</strong></td>
+      <td>{$ficha.cod_estadistico}</td>
+      <td><strong>Telefono</strong></td>
+      <td>{$ficha.telf}</td>
+    </tr>
+    <tr>
+      <td><strong>Municipio</strong></td>
+      <td>{$ficha.municipio_id}</td>
+	  <td><strong>Parroquia</strong></td>
+      <td>{$ficha.parroquias_id}</td>
+    </tr> 
+	<tr>
+	  <td><strong>Direccion</strong></td>
+      <td colspan="3">{$ficha.direccion}</td>
+	</tr>
+    <tr>
+      <td><strong>N&ordm; de Aulas</strong></td>
+      <td>{$ficha.nro_aulas}</td>
+      <td><strong>Matricula</strong></td>
+      <td>{$ficha.matricula}</td>
+    </tr>
+    <tr>
+      <td><strong>Latitud</strong></td>
+      <td>{$ficha.coordenadas_latitud}</td>
+      <td><strong>Altitud</strong></td>
+      <td>{$ficha.coordenadas_altitud}</td>
+    </tr>
+    <tr>
+      <td><strong>Longitud</strong></td>
+      <td>{$ficha.coordenadas_longitud}</td>
+      <td><strong>Nivel</strong></td>
+      <td>{$ficha.nivel_id}</td>
+    </tr>
+    <tr>
+      <td><strong>Caracteristicas</strong></td>
+      <td colspan="3">{$ficha.caracteristicas}</td>
+    </tr>
+	<tr>
+      <td colspan="2" align="center"><a href="modificar_plantel.php?id={$ficha.id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+      <td colspan="2" align="center"><a href="?id={$ficha.id}&func=delete"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib("<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+    </tr>
+</table>
+<p>
+<div id="servicios">   
+SERVICIOS DEL PLANTEL
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<tbody>
+	{section name=p loop=$servicios}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$servicios[p].servicio_id}</td>
+		<td width="10%"><a href="?id={$ficha.id}&servi_id={$servicios[p].id}&func=delete_servicios"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+</p>
+<div id="consejo">   
+CONSEJOS COMUNALES     
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Nombre</th>
+		<th>Vocero</th>
+		<th>Cargo</th>
+		<th>Correo</th>
+		<th>Teléfono</th>
+		<td width="5%"><a href="#" onClick="flash('forma1','forma2','forma3')"><img onmouseover='overlib("<strong>Seleccionar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+<thead> 
+<tbody>
+	{section name=p loop=$consejo}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$consejo[p].nombre}</td>
+		<td>{$consejo[p].vocero}</td>
+		<td>{$consejo[p].cargo}</td>
+		<td>{$consejo[p].correo}</td>
+		<td>{$consejo[p].telf}</td>
+		<td width="5%"><a href="?id={$ficha.id}&consejo_id={$consejo[p].id}&func=delete_consejo"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+<div id="forma1" style="display:none">
+<p>&nbsp;</p>
+{$f1}
+<p>&nbsp;</p>
+</div>
+</p>
+<div id="director">   
+DATOS DEL DIRECTOR / SUB-DIRECTOR     
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Cedula</th>
+		<th>Nombre y Apellido</th>
+		<th>Correo</th>
+		<th>Telefono</th>
+		<th>Cargo</th>
+		<td width="5%"><a href="#" onClick="flash('forma2','forma3','forma1')"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+<thead> 
+<tbody>
+	{section name=p loop=$personal}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$personal[p].cedula}</td>
+		<td>{$personal[p].nombre}, {$personal[p].apellido}</td>
+		<td>{$personal[p].correo}</td>
+		<td>{$personal[p].telf}</td>
+		<td>{$personal[p].tipo}</td>
+		<td width="5%"><a href="?id={$ficha.id}&personal_id={$personal[p].id}&func=delete_personal"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+<div id="forma2" style="display:none">
+{$f2}
+</div>
+</p>
+<div id="contratos">  
+CONTRATOS    
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Codigo</th>
+		<th>Modalidad</th>
+		<th>Empresa</th>
+		<td align = "center" width="10%" colspan = "3"><a href="registrar_contratos.php?cod_dea={$ficha.cod_dea}"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+</thead>
+<tbody>
+	{section name=p loop=$contrato}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$contrato[p].codigo_contrato}</td>
+		<td>{$contrato[p].modalidad_atencion}</td>
+		<td>{$contrato[p].empresa_id}</td>
+		<td><a href="ficha_contrato.php?id={$contrato[p].id}"><img onmouseover='overlib("<strong>Ver Ficha</strong>",WIDTH, 50)' src="./imagenes/checking.png" onmouseout='return nd();'/></a></td>
+		<td><a href="registrar_contratos.php?id={$contrato[p].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 50)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+		<td><a href="?id={$ficha.id}&contrato_id={$contrato[p].id}&func=delete_contrato"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+</p>
+<div id="convenio">  
+CONVENIOS     
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Codigo</th>
+		<th>Tipo</th>
+		<th>Descripcion</th>
+		<td align = "center" width="10%" colspan = "3" width="10%"><a href="registrar_convenio.php?cod_dea={$ficha.cod_dea}"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+<thead>
+<tbody>
+	{section name=p loop=$convenio}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$convenio[p].nro_convenio}</td>
+		<td>{$convenio[p].tipo}</td>
+		<td>{$convenio[p].descripcion_trabajos}</td>
+		<td><a href="ficha_convenio.php?id={$convenio[p].id}"><img onmouseover='overlib("<strong>Ver Ficha</strong>",WIDTH, 50)' src="./imagenes/checking.png" onmouseout='return nd();'/></a></td>
+		<td><a href="modificar_convenio.php?id={$convenio[p].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 50)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+		<td><a href="?id={$ficha.id}&convenio_id={$convenio[p].id}&func=delete_convenio"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+</p>
+<div id="proye">  
+PROYECTOS
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Responsable</th>
+		<th>Estatus</th>
+		<th>Descripcion</th>
+		<td align = "center" width="10%" colspan = "3" width="10%"><a href="registrar_proyecto.php?cod_dea={$ficha.cod_dea}"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+<thead>
+<tbody>
+	{section name=p loop=$proyecto}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$proyecto[p].responsable}</td>
+		<td>{$proyecto[p].estatus}</td>
+		<td>{$proyecto[p].desc_solicitado}</td>
+		<td><a href="ficha_proyecto.php?id={$proyecto[p].id}"><img onmouseover='overlib("<strong>Ver Ficha</strong>",WIDTH, 50)' src="./imagenes/checking.png" onmouseout='return nd();'/></a></td>
+		<td><a href="modificar_proyecto.php?id={$proyecto[p].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 50)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+		<td><a href="?id={$ficha.id}&proyecto_id={$proyecto[p].id}&func=delete_proyecto"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+</p>
+<div id="eva">  
+EVALUACIONES TECNICAS
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Solicitado Por</th>
+		<th>Medio</th>
+		<th>Descripcion</th>
+		<td align = "center" width="10%" colspan = "3" width="10%"><a href="registrar_evaluacion.php?cod_dea={$ficha.cod_dea}"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+<thead>
+<tbody>
+	{section name=p loop=$evaluacion}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$evaluacion[p].solicitado_por}</td>
+		<td>{$evaluacion[p].medio}</td>
+		<td>{$evaluacion[p].descripcion_solicitud}</td>
+		<td><a href="ficha_evaluacion.php?id={$evaluacion[p].id}"><img onmouseover='overlib("<strong>Ver Ficha</strong>",WIDTH, 50)' src="./imagenes/checking.png" onmouseout='return nd();'/></a></td>
+		<td><a href="modificar_evaluacion.php?id={$evaluacion[p].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 50)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+		<td><a href="?id={$ficha.id}&evaluacion_id={$evaluacion[p].id}&func=delete_evaluacion"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+</p>
+<div id="dota"> 
+DOTACIONES
+<table border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Nro de Memo</th>
+		<th>Gerencia</th>
+		<th>Fecha</th>
+		<td align = "center" width="10%" colspan = "3" width="10%"><a href="registrar_dotacion.php?cod_dea={$ficha.cod_dea}"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+<thead>
+<tbody>
+	{section name=p loop=$dotacion}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$dotacion[p].nro_memo}</td>
+		<td>{$dotacion[p].gerencia}</td>
+		<td>{$dotacion[p].fecha}</td>
+		<td><a href="ficha_dotacion.php?id={$dotacion[p].id}"><img onmouseover='overlib("<strong>Ver Ficha</strong>",WIDTH, 50)' src="./imagenes/checking.png" onmouseout='return nd();'/></a></td>
+		<td><a href="modificar_dotacion.php?id={$dotacion[p].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 50)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+		<td><a href="?id={$ficha.id}&dotacion_id={$dotacion[p].id}&func=delete_dotacion"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+</p>
+<h3>GALERIA DE FOTOS DEL PLANTEL</h3>     
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Descripción</th>
+		<th>Foto</th>
+		<td width="5%"><a href="#" onClick="flash('forma3','forma2','forma1')"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+</thead> 
+<tbody>
+	{section name=p loop=$fotos}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$fotos[p].descripcion}</td>
+		<td><a href="./upload/{$fotos[p].foto}"><img src="./upload/{$fotos[p].foto}" width="120" height="120" /></a></td>
+		<td width="5%"><a href="?id={$ficha.id}&foto_id={$fotos[p].id}&func=delete_foto"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+<div id="forma3" style="display:none">
+{$f3}
+</div>
+{include file="pie.html"}
+{literal}
+<script>
+	function flash(a,b,c)
+	{
+		document.getElementById(a).style.setProperty("display","inline","")
+		document.getElementById(b).style.setProperty("display","none","");
+		document.getElementById(c).style.setProperty("display","none","");
+	}
+</script>
+<script>
+	var f1 = new LiveValidation('cedula'); f1.add( Validate.Presence ); f1.add( Validate.Length, { minimum: 7 } );
+	var f2 = new LiveValidation('nombre'); f2.add( Validate.Presence );
+	var f3 = new LiveValidation('apellido'); f3.add( Validate.Presence );
+	var f4 = new LiveValidation('correo'); f4.add( Validate.Email );
+	var f5 = new LiveValidation('telf'); f5.add( Validate.Numericality ); f5.add( Validate.Length, { minimum: 7 } );
+</script>
+<script>
+	var f15 = new LiveValidation('descripcion'); f15.add( Validate.Presence );
+</script>
+{/literal}
