@@ -26,10 +26,12 @@
       <td><strong>Codigo DEA</strong></td>
       <td>{$ficha.codigo_dea}</td>
     </tr> 
+    {if $ficha.fecha_dotacion neq '00-00-0000'}
     <tr>
       <td><strong>Fecha Dotacion</strong></td>
       <td>{$ficha.fecha_dotacion}</td>
     </tr>
+    {/if}
 </table>
 </p>
 <table class="enhancedtable" align="center" width="100%" border="1" cellspacing="0" cellpadding = "3">
@@ -39,7 +41,7 @@
 	</tr>
 	<tr> 
       <th>Descripcion</th>
-      <th>Tipo</th>
+      <th colspan="2">Tipo</th>
 	  <th>Tipo Mobiliario</th>
       <th>Empresa</th>
 	  <th>Monto</th>
@@ -50,7 +52,8 @@
 	{section name=i loop=$mobiliario}
 		<tr>
 		  <td>{$mobiliario[i].descripcion}</td>	
-		  <td>{$mobiliario[i].tipo}</td>
+		  <td>{$mobiliario[i].tipo}</td>	
+		  <td>{$mobiliario[i].tipo2}</td>	
 		  <td>{$mobiliario[i].tipo_mobiliario}</td>
 		  <td>{$mobiliario[i].empresa}</td>
 		  <td>{$mobiliario[i].monto}</td>

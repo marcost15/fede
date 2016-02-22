@@ -1,5 +1,6 @@
-<?php /* Smarty version 2.6.26, created on 2015-06-26 00:16:18
+<?php /* Smarty version 2.6.26, created on 2016-02-22 17:00:58
          compiled from rp_cons_evaluacionesxfecha.html */ ?>
+<?php if ($this->_tpl_vars['datos']): ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -11,7 +12,6 @@ unset($_smarty_tpl_vars);
 </br>Fecha Final: <?php echo $this->_tpl_vars['fecha_fin']; ?>
 </br></div>
 </p>
-<?php if ($this->_tpl_vars['datos']): ?>
 <div id="resultados">
 <table class="enhancedtable" cellspacing="0" cellpadding = "3" border="1" align="center" width="100%">
 <thead>
@@ -90,6 +90,8 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 </tbody>
 </table>
 </div>
+<p>
+<input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
 <?php else: ?>
 	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
 <?php endif; ?>

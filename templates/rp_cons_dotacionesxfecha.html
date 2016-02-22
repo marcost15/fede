@@ -25,13 +25,19 @@
 		<td>{$datos[p].codigo_dea}</td>
 		<td>{$datos[p].plantel_nombre}</td>
 		<td>{$datos[p].fecha}</td>
-		<td>{$datos[p].fecha_dotacion}</td>
+		{if $datos[p].fecha_dotacion eq '00-00-0000'}
+			<th>&nbsp;</th>
+		{else}
+			<td>{$datos[p].fecha_dotacion}</td>
+		{/if}
 		<td>{$datos[p].nro_memo}</td>
 		<td>{$datos[p].gerencia}</td>
 	</tr>{/section}
 </tbody>
 </table>
 </div>
+<p>
+<input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
 {else}
 	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
 {/if}

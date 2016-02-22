@@ -7,6 +7,6 @@ function bd_guardar_dotacion($d)
 
 function bd_guardar_dotacion_mobiliario($d)
 {
-	enviar_sql("INSERT INTO  dotacion_mobiliario (id, dotacion_id, descripcion, tipo,tipo_mobiliario, empresa, monto) 
-	VALUES ('','$d[tabla_id]','$d[descripcion_mobi]','$d[tipo]','$d[tipo_mobiliario]','$d[empresa]','$d[monto]');");
+	enviar_sql("INSERT INTO  dotacion_mobiliario (id, dotacion_id, descripcion, tipo,tipo2,tipo_mobiliario, empresa, monto) 
+	VALUES ('','$d[tabla_id]','$d[descripcion_mobi]','$d[tipo]','$d[tipo2]','$d[tipo_mobiliario]','$d[empresa]','$d[monto]');");
 }

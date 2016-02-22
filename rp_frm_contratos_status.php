@@ -23,6 +23,7 @@ $status = array(
 $f1=new dbFormHandler('contratos_repo');
 $f1->setLanguage('es');
 $f1->borderStart('REPORTE DE AVANCE DE OBRAS POR ESTATUS');
+$f1->DateField('Fecha Inicio','fecha_ini',validafecha,1,'d-m-y',"10:03");
 $f1->selectField('Estatus', 'id',$status,FH_NOT_EMPTY,true);
 $f1->setMask(
    " <tr>\n".
@@ -38,7 +39,8 @@ $f1->onCorrect("procesar");
 function procesar($d)
 {
 	$id = $d['id'];
-	ir("rp_cons_contratos_status.php?id=$id");
+	$fecha_ini = $d['fecha_ini'];
+	ir("rp_cons_contratos_status.php?id=$id&fecha_ini=$fecha_ini");
 }
 $smarty->assign('f1',$f1->flush(true));
 $smarty->disp();

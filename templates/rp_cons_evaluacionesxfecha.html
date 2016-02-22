@@ -1,9 +1,9 @@
+{if $datos}
 {include file="cabecera.html"}
 <div id="resultados_reporte">
 <p>
 <div id = "indice">REPORTE DE EVALUACIONES TÉCNICAS POR FECHA </br>Fecha Inicial: {$fecha_ini}</br>Fecha Final: {$fecha_fin}</br></div>
 </p>
-{if $datos}
 <div id="resultados">
 <table class="enhancedtable" cellspacing="0" cellpadding = "3" border="1" align="center" width="100%">
 <thead>
@@ -44,6 +44,8 @@
 </tbody>
 </table>
 </div>
+<p>
+<input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
 {else}
 	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
 {/if}

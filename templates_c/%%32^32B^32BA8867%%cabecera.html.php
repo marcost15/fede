@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 15:22:12
+<?php /* Smarty version 2.6.26, created on 2016-02-22 16:37:09
          compiled from cabecera.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'cabecera.html', 7, false),)), $this); ?>
@@ -69,9 +69,9 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 				</li>
 				<li><span>Reportes</span>
 					<ul>
-						<li title="rp_frm_contratos_status"><a href="rp_frm_contratos_status.php">Avance de Obras</a></li>
-						<li title="rp_frm_donaciones"><a href="rp_frm_dotacionesxfecha.php">Dotaciones</a></li>
-						<li title="rp_frm_evaluaciones"><a href="rp_frm_evaluacionesxfecha.php">Evaluaciones</a></li>	
+						<li title="Avance de Obras"><a href="rp_frm_contratos_status.php">Avance de Obras</a></li>
+						<li title="Dotaciones"><a href="rp_frm_dotacionesxfecha.php">Dotaciones</a></li>
+						<li title="Evaluaciones"><a href="rp_frm_evaluacionesxfecha.php">Evaluaciones</a></li>	
 					</ul>
 				</li>
 				<li><span>Personal</span>

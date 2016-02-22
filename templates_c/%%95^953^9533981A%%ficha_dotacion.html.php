@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2015-10-30 14:15:59
+<?php /* Smarty version 2.6.26, created on 2016-02-22 16:35:23
          compiled from ficha_dotacion.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'cycle', 'ficha_dotacion.html', 76, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'cycle', 'ficha_dotacion.html', 79, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => ' Ficha Dotacion')));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -40,11 +40,13 @@ unset($_smarty_tpl_vars);
       <td><?php echo $this->_tpl_vars['ficha']['codigo_dea']; ?>
 </td>
     </tr> 
+    <?php if ($this->_tpl_vars['ficha']['fecha_dotacion'] != '00-00-0000'): ?>
     <tr>
       <td><strong>Fecha Dotacion</strong></td>
       <td><?php echo $this->_tpl_vars['ficha']['fecha_dotacion']; ?>
 </td>
     </tr>
+    <?php endif; ?>
 </table>
 </p>
 <table class="enhancedtable" align="center" width="100%" border="1" cellspacing="0" cellpadding = "3">
@@ -54,7 +56,7 @@ unset($_smarty_tpl_vars);
 	</tr>
 	<tr> 
       <th>Descripcion</th>
-      <th>Tipo</th>
+      <th colspan="2">Tipo</th>
 	  <th>Tipo Mobiliario</th>
       <th>Empresa</th>
 	  <th>Monto</th>
@@ -90,7 +92,9 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 		  <td><?php echo $this->_tpl_vars['mobiliario'][$this->_sections['i']['index']]['descripcion']; ?>
 </td>	
 		  <td><?php echo $this->_tpl_vars['mobiliario'][$this->_sections['i']['index']]['tipo']; ?>
-</td>
+</td>	
+		  <td><?php echo $this->_tpl_vars['mobiliario'][$this->_sections['i']['index']]['tipo2']; ?>
+</td>	
 		  <td><?php echo $this->_tpl_vars['mobiliario'][$this->_sections['i']['index']]['tipo_mobiliario']; ?>
 </td>
 		  <td><?php echo $this->_tpl_vars['mobiliario'][$this->_sections['i']['index']]['empresa']; ?>

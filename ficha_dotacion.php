@@ -74,8 +74,10 @@ function proc_plantel_fotos($d)
 }
 
 $tipo=array(
-'SOLICITUD' => 'SOLICITUD',
-'DOTADO' => 'DOTADO'
+'S' => 'SOLICITUD'
+);
+$tipo2=array(
+'D' => 'DOTADO'
 );
 
 $f2=new FormHandler('dotacion_mobiliario',NULL,'onclick="highlight(event)"');
@@ -84,6 +86,8 @@ $f2->borderStart('Agregar Mobiliario');
 $f2->hiddenField('tabla_id', $id);
 $f2->textField('Descripcion','descripcion_mobi',FH_STRING,50,100,"onkeyup=\"dotacion_mobiliario.descripcion_mobi.value=dotacion_mobiliario.descripcion_mobi.value.toUpperCase();\"");
 $f2->selectField('Tipo','tipo',$tipo,FH_NOT_EMPTY,true);
+$f2->RadioButton("Solicitud", "tipo", $tipo);
+$f2->RadioButton("Dotado", "tipo2", $tipo2);
 $f2->textField('Tipo Mobiliario','tipo_mobiliario',FH_STRING,20,255,"onkeyup=\"dotacion_mobiliario.tipo_mobiliario.value=dotacion_mobiliario.tipo_mobiliario.value.toUpperCase();\"");
 $f2->textField('Empresa','empresa',_FH_STRING,50,100,"onkeyup=\"dotacion_mobiliario.empresa.value=dotacion_mobiliario.empresa.value.toUpperCase();\"");
 $f2->textField('Monto','monto',_FH_FLOAT,10,10);

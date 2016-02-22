@@ -12,8 +12,10 @@ if (bd_verificar_privilegios('rp_cons_contratos_status.php',$_SESSION['usuario']
 }
 
 $id = $_REQUEST['id'];
-
-$datos = sql2array("SELECT * FROM contratos WHERE estatus = '$id'");
+$fecha = $_REQUEST['fecha_ini'];
+$fecha_ini = f2f($fecha);
+$fecha_actual = date('Y-m-d');
+$datos = sql2array("SELECT * FROM contratos WHERE estatus = '$id' AND fecha_inicio BETWEEN '$fecha_ini' AND '$fecha_actual'");
 foreach ($datos as $i=>$c)
 {
 	$cod_dea = $datos[$i]['codigo_dea'];
@@ -32,5 +34,6 @@ foreach ($datos as $i=>$c)
 }
 
 $smarty->assign('datos',$datos);
+$smarty->assign('fecha',$fecha);
 $smarty->assign('id',$id);
 $smarty->disp();

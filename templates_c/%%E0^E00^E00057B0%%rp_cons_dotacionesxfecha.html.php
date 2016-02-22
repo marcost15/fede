@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-01-30 13:42:14
+<?php /* Smarty version 2.6.26, created on 2016-02-22 17:00:50
          compiled from rp_cons_dotacionesxfecha.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
@@ -62,8 +62,12 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 </td>
 		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['fecha']; ?>
 </td>
-		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['fecha_dotacion']; ?>
+		<?php if ($this->_tpl_vars['datos'][$this->_sections['p']['index']]['fecha_dotacion'] == '00-00-0000'): ?>
+			<th>&nbsp;</th>
+		<?php else: ?>
+			<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['fecha_dotacion']; ?>
 </td>
+		<?php endif; ?>
 		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['nro_memo']; ?>
 </td>
 		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['gerencia']; ?>
@@ -72,6 +76,8 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 </tbody>
 </table>
 </div>
+<p>
+<input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
 <?php else: ?>
 	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
 <?php endif; ?>
