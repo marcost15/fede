@@ -1,0 +1,78 @@
+{include file="cabecera.html" title=" Ficha Proyecto"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+<h3>DATOS DEL PROYECTO</h3>
+<div>
+<table width="700" border="1" align="center">
+    <tr>
+      <td><strong>Codigo DEA </strong></td>
+      <td>{$ficha.codigo_dea}</td>
+	   <td><strong>Codigo Proyecto </strong></td>
+      <td>{$ficha.cod_proyecto}</td>
+    </tr>
+    <tr>
+      <td><strong>Responsable</strong></td>
+      <td>{$ficha.responsable}</td>
+      <td><strong>Descripcion</strong></td>
+      <td>{$ficha.desc_solicitado}</td>
+    </tr>
+    <tr>
+      <td><strong>Estatus</strong></td>
+      <td>{$ficha.estatus}</td>
+      <td><strong>Fecha Respuesta</strong></td>
+      <td>{$ficha.fecha_resp}</td>
+    </tr> 
+    <tr>
+      <td><strong>Descripcion Respuesta</strong></td>
+      <td>{$ficha.desc_respuesta}</td>
+	  <td><strong>Proyecto Actual</strong></td>
+      <td>{$ficha.proy_actual}</td>
+    </tr> 
+    <tr>
+      <td><strong>Proyecto Propuesto</strong></td>
+      <td>{$ficha.proy_propuesto}</td>
+	   <td><strong>Fecha de Solicitud</strong></td>
+      <td>{$ficha.fecha_solicitud}</td>
+    </tr>
+	<tr colspan = "4">
+		<td colspan = "2"><strong>Observacion</strong></td>
+        <td colspan = "2">{$ficha.observacion}</td>
+	</tr>
+</table>
+<p>
+<h3>GALERIA DE FOTOS DEL PROYECTO</h3>     
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Descripcion</th>
+		<th>Foto</th>
+		<td width="5%"><a href="#" onClick="flash('forma3')"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+</thead> 
+<tbody>
+	{section name=p loop=$fotos}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$fotos[p].descripcion}</td>
+		<td><a href="./upload/{$fotos[p].foto}"><img src="./upload/{$fotos[p].foto}" width="120" height="120" /></a></td>
+		<td width="5%"><a href="?id={$ficha.id}&foto_id={$fotos[p].id}&func=delete_foto"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+<div id="forma3" style="display:none">
+{$f3}
+</div>
+<p>
+{include file="pie.html"}
+{literal}
+<script>
+	function flash(a)
+	{
+		document.getElementById(a).style.setProperty("display","inline","")
+	}
+</script>
+<script>
+	var f15 = new LiveValidation('descripcion'); f15.add( Validate.Presence );
+</script>
+{/literal}

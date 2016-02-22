@@ -1,0 +1,14 @@
+﻿{include file="cabecera.html" title="Modificar Dotacion"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+{$f1}
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('nro_memo'); f1.add( Validate.Presence ); f1.add( Validate.Numericality );
+	var f2 = new LiveValidation('gerencia'); f2.add( Validate.Presence ); 
+	var f3 = new LiveValidation('cod_dotacion'); f3.add( Validate.Presence ); 
+</script>
+{/literal}

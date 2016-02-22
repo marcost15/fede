@@ -1,0 +1,341 @@
+#menu{
+	border: solid 1px #087BB2;
+    -moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	text-align:center;
+	font: 100% sans-serif; 
+}
+
+#bannereporte {
+	display:none;
+	text-align:center;
+}
+#banner{
+	text-align:center;
+}
+#fondo{
+    width:1053px;
+	background-color: #ffffff;
+	margin:auto;
+	border:4px solid #045889;
+}
+
+#boton{
+	margin:auto;
+	word-spacing:50px;
+}
+#fondoreporte{
+	position: relative;
+	background-color: transparent;
+	margin:auto;
+	text-align::center;
+}
+#contenido{
+	background-color: #ffffff;
+	margin:auto;
+	text-align:center;
+}
+
+#contenido_sinmenu{
+    width:100%;
+	background-color:#ffffff;
+	margin:auto;
+	text-align:center;
+}
+#contenido_reporte{
+	margin:auto;
+	text-align:center;
+}
+#menudiv{
+text-align: center;
+}
+#pie{ 
+	background-image: url("./imagenes/banner.jpg");
+	background-repeat:no-repeat;
+	text-align:center;
+	padding:15px;
+	clear: both;
+	font:90% sans-serif;
+}
+.imagenFondo {
+    position: relative;
+}
+.imagenFondo span {
+    position: absolute;
+    left: 350;
+	text-align:center;
+	font:90% sans-serif;
+}
+/* Tablas
+***********************************************************/
+#resultados{
+	background-color: #e6eaed;
+}
+#resultados table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#resultados table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+#resultadosxgrilla{
+	overflow: auto;
+	width:870px;
+	height: 532px;
+	background-color: #EAEAEA;
+	text-align: center;
+}
+.enhancedtable{
+	background:#979E9B;
+	border:2px solid #e6eaed;
+	text-align: center;
+}
+.enhancedtable td,.enhancedtable th {
+	text-align: center;
+}
+.enhancedtablecolouredrow{
+	background:#ffffff;
+}
+.enhancedtablerowhover{
+	background:#e6eaed;
+}
+.enhancedtableactive{
+	background:#fc6;
+}
+/* Tablas
+***********************************************************/
+#servicios{
+	background:#3AA2AE;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#servicios table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#servicios table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#consejo{
+	background:#B5AFB6;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#consejo table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#consejo table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#director{
+	background:#70A7C6;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#director table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#director table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#contratos{
+	background:#6C85A4;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#contratos table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#contratos table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#convenio{
+	background:#7FA58B;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#convenio table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#convenio table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#proye{
+	background:#91BEC0;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#proye table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#proye table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#eva{
+	background:#C1A2CD;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#eva table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#eva table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+
+#dota{
+	background:#C5B39F;
+	border:2px solid #e6eaed;
+	font: 140% sans-serif; 
+	color:white;
+}
+#dota table .linea1{
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#dota table .linea2{
+	background-color: #e6eaed;
+	text-align: center;
+}
+/* Tablas
+***********************************************************/
+
+#indice{
+	text-align: left;
+	font-weight:bolder
+}
+a:link{color:#000000;text-decoration:underline}
+a:hover{color:#A51000;text-decoration:underline;}
+a:active{color:#A51000;font-weight:bolder} 
+a:visited{color:#000000;font-style:italic}
+
+
+#fondo table.ficha{
+	text-align: left;
+	border-collapse: collapse;
+	border: solid 2px #000000;
+}
+#fondo table.ficha th{
+	background-color:#e6eaed;
+	font-weight:bolder
+}
+#titulo{
+	text-align:center;
+	background-color:#FFFFFF;
+	color:#045889;
+	font-weight:bold;
+	font:120% sans-serif;
+	padding:1px;
+}
+h1,h2,h3,h4,h5{
+	text-align: center;
+	color:#FFFFFF;
+	background-color: #045889;
+	font: 120% sans-serif;
+}
+
+.abc{
+	text-align : center;
+	font-weight:bolder;
+	text-decoration: none;	
+}
+#mensaje{
+	width : 100%;
+	background-color: transparent;
+	text-align : center;
+	font-weight:bolder;
+	font-size:medium;
+	color:red;
+}
+#foto15{
+	width : 20%;
+	background-color: #FFFFFF;
+	float : right;
+	text-align : center;
+}
+#documentos{
+	width : 100%;
+	font-size:medium;
+	font-family:arial;
+	line-height : 35px;
+	text-align:justify;
+}
+
+#busqueda2{
+	width : 50%;
+	float : left;
+	background-color: #FFFFFF;
+}
+#busqueda3{
+	background-color: #FFFFFF;
+	float:right;
+	width : 50%;
+}
+
+#fondo table.firma{
+	text-align : center;
+}
+
+ 
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+
+.LV_valid {
+    color:#00CC00;
+}
+	
+.LV_invalid {
+    color:#CC0000;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 1px solid #CC0000;
+}
+
+/****************SORTABLE***************************/
+a img {
+	border: 0;
+}
+/****************SORTABLE***************************/

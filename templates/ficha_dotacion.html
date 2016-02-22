@@ -1,0 +1,105 @@
+{include file="cabecera.html" title=" Ficha Dotacion"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+<h3>DATOS DE LA DOTACION</h3>
+<div>
+<table width="700" border="1" align="center">
+    <tr>
+      <td width="150"><strong>Código de Dotación</strong></td>
+      <td>{$ficha.id}</td>
+    </tr>
+	<tr>
+      <td width="150"><strong>Numero Memo</strong></td>
+      <td>{$ficha.nro_memo}</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha</strong></td>
+      <td>{$ficha.fecha}</td>
+    </tr>
+    <tr>
+      <td><strong>Gerencia</strong></td>
+      <td>{$ficha.gerencia}</td>
+    </tr> 
+    <tr>
+      <td><strong>Codigo DEA</strong></td>
+      <td>{$ficha.codigo_dea}</td>
+    </tr> 
+    <tr>
+      <td><strong>Fecha Dotacion</strong></td>
+      <td>{$ficha.fecha_dotacion}</td>
+    </tr>
+</table>
+</p>
+<table class="enhancedtable" align="center" width="100%" border="1" cellspacing="0" cellpadding = "3">
+  <thead>
+    <tr>
+	  <td colspan="16" align="center"><font size=4><strong>MOBILIARIO</strong></font></td>
+	</tr>
+	<tr> 
+      <th>Descripcion</th>
+      <th>Tipo</th>
+	  <th>Tipo Mobiliario</th>
+      <th>Empresa</th>
+	  <th>Monto</th>
+	  <td width="5%"><a href="#" onClick="flash('forma2','forma3')"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+    </tr>
+  </thead>
+  <tbody>
+	{section name=i loop=$mobiliario}
+		<tr>
+		  <td>{$mobiliario[i].descripcion}</td>	
+		  <td>{$mobiliario[i].tipo}</td>
+		  <td>{$mobiliario[i].tipo_mobiliario}</td>
+		  <td>{$mobiliario[i].empresa}</td>
+		  <td>{$mobiliario[i].monto}</td>
+		  <td width="5%"><a href="?id={$ficha.id}&mobiliario_id={$mobiliario[i].id}&func=delete_mobiliario"><img onclick="return confirm('?Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+		</tr>
+	{/section}
+  </tbody>
+</table>
+<div id="forma2" style="display:none">
+{$f2}
+</div>
+<h3>GALERIA DE FOTOS DE LA DOTACION</h3>     
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Descripcion</th>
+		<th>Foto</th>
+		<td width="5%"><a href="#" onClick="flash('forma3','forma2')"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+</thead> 
+<tbody>
+	{section name=p loop=$fotos}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$fotos[p].descripcion}</td>
+		<td><a href="./upload/{$fotos[p].foto}"><img src="./upload/{$fotos[p].foto}" width="120" height="120" /></a></td>
+		<td width="5%"><a href="?id={$ficha.id}&foto_id={$fotos[p].id}&func=delete_foto"><img onclick="return confirm('?Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+<div id="forma3" style="display:none">
+{$f3}
+</div>
+</div>
+<p>
+{include file="pie.html"}
+{literal}
+<script>
+	function flash(a,b)
+	{
+		document.getElementById(a).style.setProperty("display","inline","")
+		document.getElementById(b).style.setProperty("display","none","")
+	}
+</script>
+<script>
+	var f15 = new LiveValidation('descripcion'); f15.add( Validate.Presence );
+</script>
+<script>
+	var f5 = new LiveValidation('descripcion_mobi'); f5.add( Validate.Presence );
+	var f7 = new LiveValidation('empresa'); f7.add; 
+	var f8 = new LiveValidation('monto'); f8.add; 
+</script>
+{/literal}
