@@ -1,0 +1,19 @@
+﻿{include file="cabecera.html" title="Registrar Contrato"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+{$f1}
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('codigo_contrato'); f1.add( Validate.Presence ); 
+</script>
+<script>
+	var f3 = new LiveValidation('desc_trabajo'); f3.add( Validate.Presence );
+	var f4 = new LiveValidation('plan'); f4.add( Validate.Presence );
+	var f6= new LiveValidation('nro_dias_prorroga'); f6.add( Validate.Numericality );
+	var f12= new LiveValidation('empleos_directos'); f12.add( Validate.Numericality );
+	var f13= new LiveValidation('empleos_indirectos'); f13.add( Validate.Numericality );
+</script>
+{/literal}

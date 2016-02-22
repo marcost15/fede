@@ -1,0 +1,32 @@
+﻿{include file="cabecera.html" title=" Consultas de Plantel"}
+<h4><B><I>BUSQUEDA DEL PLANTEL</I></B></h4>
+{$f1}
+{if $datos}
+<h4>Planteles Solicitados</h4>
+<div id="resultados">
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Codigo DEA</th>
+		<th>Nombre</th>
+		<th>Direccion</th>
+		<th>&nbsp;</th>
+	</tr>
+<thead>
+<tbody>
+	{section name=p loop=$datos}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$datos[p].cod_dea}</td>
+		<td>{$datos[p].nombre}</td>
+		<td>{$datos[p].direccion}</td>
+		<td><a href="ficha_plantel.php?id={$datos[p].id}"><img onmouseover='overlib("<strong>Ver Ficha</strong>",WIDTH, 70)' src="./imagenes/checking.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+{else}
+	{if $error1 eq 2} 
+		<h3>NO SE ENCONTRÓ PLANTEL CON ESOS PARAMETROS, VERIFIQUE...</h3>
+	{/if}
+{/if}
+{include file="pie.html"}

@@ -1,0 +1,14 @@
+﻿{include file="cabecera.html" title="Registrar Proyecto"}
+{if $smarty.session.mensaje}
+</p>
+<div class="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+{$f1}
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('desc_solicitado'); f1.add( Validate.Presence );
+	var f2 = new LiveValidation('responsable'); f2.add( Validate.Presence ); 
+	var f3 = new LiveValidation('cod_proyecto'); f3.add( Validate.Presence ); ;
+</script>
+{/literal}

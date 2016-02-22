@@ -1,0 +1,52 @@
+{if $datos}
+{include file="cabecera.html"}
+<div id="resultados_reporte">
+<p>
+<div id = "indice">REPORTE DE EVALUACIONES TÉCNICAS POR FECHA </br>Fecha Inicial: {$fecha_ini}</br>Fecha Final: {$fecha_fin}</br></div>
+</p>
+<div id="resultados">
+<table class="enhancedtable" cellspacing="0" cellpadding = "3" border="1" align="center" width="100%">
+<thead>
+	<tr> 
+		<th>ID</th>
+		<th>Codigo Evaluación</th>
+		<th>Cod DEA</th>
+		<th>Nombre del Plantel</th>
+		<th>Fecha Solicitud</th>
+		<th>Solicitado por</th>
+		<th>Medio</th>
+		<th>Modalidad Atención</th>
+		<th>Descripcion Solicitud</th>
+		<th>Estatus</th>
+		<th>Fecha de Entrega</th>
+		<th>Fecha de Respuesta</th>
+		<th>Descripción de Respuesta</th>
+		<th>Observación</th>
+</thead>
+<tbody>
+	{section name=p loop=$datos}
+	<tr>
+		<td><a href="ficha_evaluacion.php?id={$datos[p].id}">{$datos[p].id}</a></td>
+		<td>{$datos[p].cod_evaluacion}</td>
+		<td>{$datos[p].codigo_dea}</td>
+		<td>{$datos[p].plantel_nombre}</td>
+		<td>{$datos[p].fecha_solicitud}</td>
+		<td>{$datos[p].solicitado_por}</td>
+		<td>{$datos[p].medio}</td>
+		<td>{$datos[p].modalidad_atencion}</td>
+		<td>{$datos[p].descripcion_solicitud}</td>
+		<td>{$datos[p].estatus}</td>
+		<td>{$datos[p].fecha_entrega}</td>
+		<td>{$datos[p].fecha_respuesta}</td>
+		<td>{$datos[p].descripcion_respuesta}</td>
+		<td>{$datos[p].observacion}</td>
+	</tr>{/section}
+</tbody>
+</table>
+</div>
+<p>
+<input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
+{else}
+	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
+{/if}
+{include file="pie.html"}

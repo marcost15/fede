@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<link rel="icon" href="./imagenes/favicon.ico" type="image/x-icon" /> 
+		<link rel="shortcut icon" href="./imagenes/favicon.ico" type="image/x-icon" /> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex,nofollow" />
+		<title>{$title|default:Fede}</title>
+		<link rel="stylesheet" type="text/css" href="./estilo/layout.css"/> 
+		<link rel="stylesheet" type="text/css" href="./estilo/cnc.css"/> 
+		<script type="text/javascript" src="./js/domtableenhance.js"></script>
+		<script type="text/javascript" src="../libreriasjs/sortable/sortable.js"></script>
+		<script type="text/javascript" src="./js/jquery/jquery.min.js"></script><!-- Jquery -->
+		<script type="text/javascript" src="./js/jquery/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="./js/jquery/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+		<script type="text/javascript" src="./js/livevalidation.js"></script>
+	</head> 
+	<body background="./imagenes/papel_tapiz.jpg" topmargin="0" leftmargin="0">
+		<div id = "fondo">
+		<div id="cintillo"><img src="./imagenes/cintillo.jpg" width="1050" height="70"/></div>
+		<div id="banner"><img src="./imagenes/banner.png" width="1050" height="150"/></div>
+		<div id="titulo">SISTEMA ADMINISTRATIVO FEDE{if $smarty.session.usuario} Usuario: {$smarty.session.usuario.nombre} {$smarty.session.usuario.apellido}{/if}</div><!-- titulo -->				
+		<div id="contenido_reporte">

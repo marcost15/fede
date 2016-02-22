@@ -1,0 +1,14 @@
+﻿{include file="cabecera.html" title="Ing Inspector"}
+{$f1}
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('cedula'); f1.add( Validate.Presence );f1.add( Validate.Numericality ); f1.add( Validate.Length, { minimum: 8 } );
+	var f2 = new LiveValidation('nombre'); f2.add( Validate.Presence );
+	var f3 = new LiveValidation('apellido'); f3.add( Validate.Presence );
+	var f4 = new LiveValidation('civ'); f4.add( Validate.Presence ); 
+	var f5 = new LiveValidation('tlf'); f5.add( Validate.Numericality ); f5.add( Validate.Length, { minimum: 7 } );
+	var f6 = new LiveValidation('correo'); f6.add( Validate.Email );
+
+</script>
+{/literal}

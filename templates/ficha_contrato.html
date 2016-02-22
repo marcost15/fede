@@ -1,0 +1,210 @@
+{include file="cabecera.html" title=" Ficha Contrato"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+<h3>DATOS DEL CONTRATO</h3>
+<table width="700" border="1" align="center">
+    <tr>
+      <td><strong>Codigo DEA </strong></td>
+      <td>{$ficha.codigo_dea}</td>
+	</tr>
+	<tr>
+      <td><strong>Nombre del Plantel</strong></td>
+      <td>{$ficha.nombre_plantel}</td>
+    </tr>
+    <tr>
+      <td><strong>Contrato Nº</strong></td>
+      <td>{$ficha.codigo_contrato}</td>
+	 </tr>
+	 <tr>
+      <td><strong>Tiempo de Ejecucion</strong></td>
+      <td>{$ficha.tiempo_ejec}</td>
+    </tr>
+    <tr>
+	  <td><strong>Descripcion</strong></td>
+      <td>{$ficha.desc_trabajo}</td>
+	</tr>
+	<tr>
+      <td><strong>Plan</strong></td>
+      <td>{$ficha.plan}</td>
+	</tr>
+	<tr>
+      <td><strong>Modalidad</strong></td>
+      <td>{$ficha.modalidad_atencion}</td>
+    </tr> 
+    <tr>
+      <td><strong>Fecha de Inicio</strong></td>
+      <td>{$ficha.fecha_inicio}</td>
+	</tr>
+	<tr>
+      <td><strong>Fecha de Terminacion</strong></td>
+      <td>{$ficha.fecha_terminacion}</td>
+    </tr> 
+    <tr>
+      <td><strong>Fecha de Paralizacion</strong></td>
+      <td>{$ficha.fecha_paralizacion}</td>
+	</tr>
+	<tr>
+      <td><strong>Motivo de Paralizacion</strong></td>
+      <td>{$ficha.motivo_paralizacion}</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Reinicio</strong></td>
+      <td>{$ficha.fecha_reinicio}</td>
+	</tr>
+	<tr>
+      <td><strong>Fecha de Prorroga</strong></td>
+      <td>{$ficha.fecha_prorroga}</td>
+    </tr>
+    <tr>
+      <td><strong>Dias de Prorroga</strong></td>
+      <td>{$ficha.nro_dias_prorroga}</td>
+	</tr>
+	<tr>
+	  <td><strong>Motivo Prorroga</strong></td>
+      <td>{$ficha.motivo_prorroga}</td>
+	</tr>
+	<tr>
+      <td><strong>Fecha de Culminacion</strong></td>
+      <td>{$ficha.fecha_culminacion}</td>
+    </tr>
+	<tr>
+      <td><strong>Monto Pagado</strong></td>
+      <td>{$ficha.monto_val_pagadas}</td>
+    </tr>
+	<tr>
+      <td><strong>Porcentaje de Ejecuci?n Financiero</strong></td>
+      <td>{$ficha.poc_ejec_financiero}</td>
+    </tr>
+	<tr>
+      <td><strong>Porcentaje de Ejecuci?n F?sico</strong></td>
+      <td>{$ficha.poc_ejec_fisico}</td>
+    </tr>
+	<tr>
+      <td><strong>Estatus</strong></td>
+      <td>{$ficha.estatus}</td>
+    </tr>
+	<tr>
+      <td><strong>Monto Contratado</strong></td>
+      <td>{$ficha.monto_contratado}</td>
+    </tr>
+	<tr>
+      <td><strong>Aumento</strong></td>
+      <td>{$ficha.aumento}</td>
+	</tr>
+	<tr>
+      <td><strong>Empleos Directos</strong></td>
+      <td>{$ficha.empleos_directos}</td>
+    </tr>
+	<tr>
+      <td><strong>Empleos Indirectos</strong></td>
+      <td>{$ficha.empleos_indirectos}</td>
+    </tr>
+	<tr>
+      <td><strong>Observacion</strong></td>
+      <td>{$ficha.observacion}</td>
+    </tr>
+</table>
+<p>
+<h3>GALERIA DE FOTOS DEL CONTRATO</h3>     
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Descripcion</th>
+		<th>Foto</th>
+		<td width="5%"><a href="#" onClick="flash('forma3')"><img onmouseover='overlib("<strong>Agregar</strong>",WIDTH, 50)' src="./imagenes/seleccionar.ico" onmouseout='return nd();'/></a></td>
+	</tr>
+</thead> 
+<tbody>
+	{section name=p loop=$fotos}
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$fotos[p].descripcion}</td>
+		<td><a href="./upload/{$fotos[p].foto}"><img src="./upload/{$fotos[p].foto}" width="120" height="120" /></a></td>
+		<td width="5%"><a href="?id={$ficha.id}&foto_id={$fotos[p].id}&func=delete_foto"><img onclick="return confirm('?Esta seguro?')" onmouseover='overlib(<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+	</tr>{/section}
+</tbody>
+</table>
+<div id="forma3" style="display:none">
+{$f3}
+</div>
+<p>
+  <h4><B><I>DATOS DE LA EMPRESA</I></B></h4>     
+<div id="resultados">
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr>
+		<th>RIF</th>
+		<th>Nombre</th>
+		<th>Telefono</th>
+		<th>Representante</th>
+		<th>Cedula</th>
+		<th>Telefono</th>
+		<th>Correo</th>
+		<th>&nbsp;</th>
+	</tr>
+<thead>
+<tbody>
+	<tr>
+		<td>{$empresa.rif}</td>
+		<td>{$empresa.nombre}</td>
+		<td>{$empresa.tlf}</td>
+		<td>{$empresa.repre_legal}</td>
+		<td>{$empresa.cedula}</td>
+		<td>{$empresa.tlf_repre}</td>
+		<td>{$empresa.correo}</td>
+		<td><a href="modificar_empresa.php?id={$empresa.id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+	</tr>
+</tbody>
+</table>
+<h4><B><I>DATOS DEL ING. INSPECTOR / ING. RESIDENTE</I></B></h4>     
+<table  class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>Cedula</th>
+		<th>Apellidos y Nombres</th>
+		<th>CIV</th>
+		<th>Tipo</th>
+		<th>Telefono</th>
+		<th>Correo</th>
+		<th>Modalidad</th>
+		<th>&nbsp;</th>
+	</tr>
+<thead>
+<tbody>
+	<tr class="linea{cycle values='1,2'}">
+		<td>{$inspector.cedula}</td>
+		<td>{$inspector.apellido}, {$inspector.nombre}</td>
+		<td>{$inspector.civ}</td>
+		<td>INSPECTOR</td>
+		<td>{$inspector.tlf}</td>
+		<td>{$inspector.correo}</td>
+		<td>{$inspector.modalidad}</td>
+		<td><a href="modificar_contratos_personal.php?id={$inspector.id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+	</tr>
+	<tr class="linea{cycle values='2,1'}">
+		<td>{$ing_residente.cedula}</td>
+		<td>{$ing_residente.apellido}, {$ing_residente.nombre}</td>
+		<td>{$ing_residente.civ}</td>
+		<td>ING RESIDENTE</td>
+		<td>{$ing_residente.tlf}</td>
+		<td>{$ing_residente.correo}</td>
+		<td>{$ing_residente.modalidad}</td>
+		<td><a href="modificar_contratos_personal.php?id={$ing_residente.id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></td>
+	</tr>
+</tbody>
+</table>
+</table>
+</div>
+{include file="pie.html"}
+{literal}
+<script>
+	function flash(a)
+	{
+		document.getElementById(a).style.setProperty("display","inline","")
+	}
+</script>
+<script>
+	var f15 = new LiveValidation('descripcion'); f15.add( Validate.Presence );
+</script>
+{/literal}
