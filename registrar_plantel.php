@@ -44,9 +44,9 @@ $f1->setHelpText('nro_aulas',"En este campo introduce el Numero de Aulas del pla
 $f1->textArea('Direccion','direccion',FH_STRING,38,3,"onkeyup=\"plantel.direccion.value=plantel.direccion.value.toUpperCase();\"");
 $f1->setHelpText('direccion',"En este campo introduce la Direccion del plantel");
 $f1->textField('Coordenadas Latitud','coordenadas_latitud',_FH_STRING,25,30,"onkeyup=\"plantel.coordenadas_latitud.value=plantel.coordenadas_latitud.value.toUpperCase();\"");
-$f1->setHelpText('coordenadas_latitud',"En este campo introduce las coordenadas en formato 000°00'00''");
+$f1->setHelpText('coordenadas_latitud',"En este campo introduce las coordenadas en formato 00.0000°");
 $f1->textField('Coordenadas Longitud','coordenadas_longitud',_FH_STRING,25,30,"onkeyup=\"plantel.coordenadas_longitud.value=plantel.coordenadas_longitud.value.toUpperCase();\"");
-$f1->setHelpText('coordenadas_longitud',"En este campo introduce las coordenadas en formato 000°00'00''");
+$f1->setHelpText('coordenadas_longitud',"En este campo introduce las coordenadas en formato 00.0000°");
 $f1->textField('Coordenadas Altitud','coordenadas_altitud',_FH_STRING,25,30,"onkeyup=\"plantel.coordenadas_altitud.value=plantel.coordenadas_altitud.value.toUpperCase();\"");
 $f1->setHelpText('coordenadas_altitud',"En este campo introduce las Coordenadas Altitud");
 $f1->textArea('Caracteristicas','caracteristicas',_FH_STRING,38,3,"onkeyup=\"plantel.caracteristicas.value=plantel.caracteristicas.value.toUpperCase();\"");

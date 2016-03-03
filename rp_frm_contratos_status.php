@@ -23,7 +23,7 @@ $status = array(
 $f1=new dbFormHandler('contratos_repo');
 $f1->setLanguage('es');
 $f1->borderStart('REPORTE DE AVANCE DE OBRAS POR ESTATUS');
-$f1->DateField('Fecha Inicio','fecha_ini',FH_NOT_EMPTY,1,'d-m-y',"10:03");
+$f1->DateField('Fecha Inicio','fecha_ini',FH_NOT_EMPTY,1,'d-m-y',"10:00");
 $f1->selectField('Estatus', 'id',$status,FH_NOT_EMPTY,true);
 $f1->setMask(
    " <tr>\n".

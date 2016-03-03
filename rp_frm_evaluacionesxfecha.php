@@ -13,8 +13,8 @@ if (bd_verificar_privilegios('rp_frm_evaluacionesxfecha.php',$_SESSION['usuario'
 $f1=new dbFormHandler('cierres',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
 $f1->borderStart('EVALUACIONES POR FECHA');
-$f1->DateField('Fecha Inicio','fecha_ini',FH_NOT_EMPTY,1,'d-m-y',"10:03");
-$f1->DateField('Fecha Final','fecha_fin',FH_NOT_EMPTY,1,'d-m-y',"10:03");
+$f1->DateField('Fecha Inicio','fecha_ini',FH_NOT_EMPTY,1,'d-m-y',"10:00");
+$f1->DateField('Fecha Final','fecha_fin',FH_NOT_EMPTY,1,'d-m-y',"10:00");
 $f1->submitButton('Aceptar','Aceptar');
 $f1->borderStop();
 $f1->onCorrect("procesar");
