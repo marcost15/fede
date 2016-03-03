@@ -25,10 +25,15 @@ if (isset($_REQUEST['cod_dea']))
 	$f1->setValue('codigo_dea', $cod_dea);
 }
 $f1->textField('Codigo de Dotacion','cod_dotacion',FH_STRING,50,255,"onkeyup=\"dotacion.cod_dotacion.value=dotacion.cod_dotacion.value.toUpperCase();\"");
+$f1->setHelpText('cod_dotacion',"En este campo introduce el Codigo de la Dotacion");
 $f1->jsDateField('Fecha de Solicitud','fecha','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha',"Seleccione la Fecha de Solicitud de la Dotacion");
 $f1->textField('Memo Nro','nro_memo',FH_DIGIT,15,11);
+$f1->setHelpText('nro_memo',"En este campo introduce el Numero MEMO de la Dotacion");
 $f1->textField('Gerencia','gerencia',FH_STRING,50,100,"onkeyup=\"dotacion.gerencia.value=dotacion.gerencia.value.toUpperCase();\"");
+$f1->setHelpText('gerencia',"En este campo introduce la Gerencia de la Dotacion");
 $f1->jsDateField('Fecha de Dotacion','fecha_dotacion','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha_dotacion',"Seleccione la Fecha de la Dotacion Realizada");
 $f1->setMask(
    " <tr>\n".
    "   <td> </td>\n".

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2015-06-22 20:45:21
-         compiled from registrar_evaluacion.html */ ?>
+<?php /* Smarty version 2.6.26, created on 2016-02-24 17:24:36
+         compiled from modificar_evaluacion.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Registrar Evaluacion')));
+$this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Modificar Evaluacion')));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
@@ -25,4 +25,5 @@ unset($_smarty_tpl_vars);
 	var f5 = new LiveValidation(\'descripcion_solicitud\'); f5.add( Validate.Presence );
 </script>
 '; ?>
+
 

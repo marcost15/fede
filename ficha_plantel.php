@@ -176,7 +176,9 @@ $f2->textField($star.'Nombre','nombre',FH_STRING,30,100,"onkeyup=\"plantel_perso
 $f2->textField($star.'Apellido','apellido',FH_STRING,30,100,"onkeyup=\"plantel_personal.apellido.value=plantel_personal.apellido.value.toUpperCase();\"");
 $f2->selectField($star.'Tipo','tipo',$tipo,FH_NOT_EMPTY,true);
 $f2->textField('Correo','correo',_FH_EMAIL,30,50);
+$f2->setHelpText('correo',"En este campo introduce el Correo Electronico");
 $f2->textField('Teléfono','telf',_FH_DIGIT,15,11);
+$f2->setHelpText('telf',"En este campo introduce el Numero de Telefono. Ejemplo: 04167896541");
 $f2->addLine($star ." = Campos Requeridos Obligatoriamente");
 $f2->setMask(
    " <tr>\n".

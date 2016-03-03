@@ -85,12 +85,18 @@ $f2->setLanguage('es');
 $f2->borderStart('Agregar Mobiliario');
 $f2->hiddenField('tabla_id', $id);
 $f2->textField('Descripcion','descripcion_mobi',FH_STRING,50,100,"onkeyup=\"dotacion_mobiliario.descripcion_mobi.value=dotacion_mobiliario.descripcion_mobi.value.toUpperCase();\"");
+$f2->setHelpText('descripcion_mobi',"En este campo introduce la Descripcion del Mobiliario Solicitado/Dotado");
 $f2->selectField('Tipo','tipo',$tipo,FH_NOT_EMPTY,true);
 $f2->RadioButton("Solicitud", "tipo", $tipo);
+$f2->setHelpText('tipo',"Seleccione si el Mobiliario fue Solicitado");
 $f2->RadioButton("Dotado", "tipo2", $tipo2);
+$f2->setHelpText('tipo2',"Seleccione si el Mobiliario fue Dotado");
 $f2->textField('Tipo Mobiliario','tipo_mobiliario',FH_STRING,20,255,"onkeyup=\"dotacion_mobiliario.tipo_mobiliario.value=dotacion_mobiliario.tipo_mobiliario.value.toUpperCase();\"");
+$f2->setHelpText('tipo_mobiliario',"En este campo introduce el tipo del Mobiliario Solicitado/Dotado");
 $f2->textField('Empresa','empresa',_FH_STRING,50,100,"onkeyup=\"dotacion_mobiliario.empresa.value=dotacion_mobiliario.empresa.value.toUpperCase();\"");
+$f2->setHelpText('empresa',"En este campo introduce el nombre de la Empresa donde se adquirio el Mobiliario");
 $f2->textField('Monto','monto',_FH_FLOAT,10,10);
+$f2->setHelpText('monto',"En este campo introduce el Monto cancelado a la Empresa donde se adquirio el Mobiliario");
 $f2->setMask(
    " <tr>\n".
    "   <td> </td>\n".

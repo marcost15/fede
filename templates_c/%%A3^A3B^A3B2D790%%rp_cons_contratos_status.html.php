@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 17:00:32
+<?php /* Smarty version 2.6.26, created on 2016-02-25 21:14:07
          compiled from rp_cons_contratos_status.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
@@ -6,6 +6,9 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div id="resultados_reporte">
+<h3>AVANCE DE OBRAS DESDE: <?php echo $this->_tpl_vars['fecha']; ?>
+, ESTATUS: <?php echo $this->_tpl_vars['id']; ?>
+</h3>
 <p>
 <div id = "indice">REPORTE DE AVANCE DE OBRAS POR ESTATUS </br>Status: <?php echo $this->_tpl_vars['id']; ?>
  </br>Fecha de Inicio: <?php echo $this->_tpl_vars['fecha']; ?>

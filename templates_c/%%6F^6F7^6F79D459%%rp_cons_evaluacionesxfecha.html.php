@@ -1,17 +1,20 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 17:00:58
+<?php /* Smarty version 2.6.26, created on 2016-02-25 21:22:05
          compiled from rp_cons_evaluacionesxfecha.html */ ?>
-<?php if ($this->_tpl_vars['datos']): ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div id="resultados_reporte">
+<h3>EVALUACIONES TÉCNICAS DESDE: <?php echo $this->_tpl_vars['fecha_ini']; ?>
+, HASTA: <?php echo $this->_tpl_vars['fecha_fin']; ?>
+</h3>
 <p>
 <div id = "indice">REPORTE DE EVALUACIONES TÉCNICAS POR FECHA </br>Fecha Inicial: <?php echo $this->_tpl_vars['fecha_ini']; ?>
 </br>Fecha Final: <?php echo $this->_tpl_vars['fecha_fin']; ?>
 </br></div>
 </p>
+<?php if ($this->_tpl_vars['datos']): ?>
 <div id="resultados">
 <table class="enhancedtable" cellspacing="0" cellpadding = "3" border="1" align="center" width="100%">
 <thead>
@@ -26,10 +29,6 @@ unset($_smarty_tpl_vars);
 		<th>Modalidad Atención</th>
 		<th>Descripcion Solicitud</th>
 		<th>Estatus</th>
-		<th>Fecha de Entrega</th>
-		<th>Fecha de Respuesta</th>
-		<th>Descripción de Respuesta</th>
-		<th>Observación</th>
 </thead>
 <tbody>
 	<?php unset($this->_sections['p']);
@@ -77,14 +76,6 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['descripcion_solicitud']; ?>
 </td>
 		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['estatus']; ?>
-</td>
-		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['fecha_entrega']; ?>
-</td>
-		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['fecha_respuesta']; ?>
-</td>
-		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['descripcion_respuesta']; ?>
-</td>
-		<td><?php echo $this->_tpl_vars['datos'][$this->_sections['p']['index']]['observacion']; ?>
 </td>
 	</tr><?php endfor; endif; ?>
 </tbody>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 16:35:23
+<?php /* Smarty version 2.6.26, created on 2016-02-27 05:47:48
          compiled from ficha_dotacion.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'cycle', 'ficha_dotacion.html', 79, false),)), $this); ?>
@@ -17,7 +17,7 @@ unset($_smarty_tpl_vars);
 <table width="700" border="1" align="center">
     <tr>
       <td width="150"><strong>Código de Dotación</strong></td>
-      <td><?php echo $this->_tpl_vars['ficha']['id']; ?>
+      <td><?php echo $this->_tpl_vars['ficha']['cod_dotacion']; ?>
 </td>
     </tr>
 	<tr>

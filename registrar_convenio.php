@@ -28,7 +28,7 @@ $status=array(
 
 $f1=new FormHandler('convenios',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
-$f1->borderStart('Agregar convenio');
+$f1->borderStart('Agregar Convenio');
 $cod_dea = $_REQUEST['cod_dea'];
 $plantel_nombre = sql2value("SELECT nombre FROM plantel WHERE cod_dea = '$cod_dea'");
 $f1->textField("CODIGO DEA", "codigo_dea",_FH_STRING,40,40,"readonly=readonly");
@@ -36,18 +36,31 @@ $f1->textField("NOMBRE DEL PLANTEL", "plantel_nombre",_FH_STRING,40,40,"readonly
 $f1->setValue('plantel_nombre', $plantel_nombre);
 $f1->setValue('codigo_dea', $cod_dea);
 $f1->textField('Nro Convenio','nro_convenio',FH_STRING,50,255,"onkeyup=\"convenios.nro_convenio.value=convenios.nro_convenio.value.toUpperCase();\"");
+$f1->setHelpText('nro_convenio',"En este campo introduce el Numero de Convenio");
 $f1->textArea('Ejecutor','ejecutor',FH_STRING,30,3,"onkeyup=\"convenios.ejecutor.value=convenios.ejecutor.value.toUpperCase();\"");
+$f1->setHelpText('ejecutor',"En este campo introduce el Ejecutor del Convenio");
 $f1->textField('Monto','monto',FH_FLOAT,20,255);
+$f1->setHelpText('monto',"En este campo introduce el Monto para el Convenio. Ejemplo: 4569875.25");
 $f1->selectField('Tipo','tipo',$tipo,FH_NOT_EMPTY,true);
+$f1->setHelpText('tipo',"Seleccione el Tipo de Convenio");
 $f1->jsDateField('Fecha de Inicio','fecha_inicio','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha_inicio',"Seleccione la Fecha de Inicio del Convenio");
 $f1->jsDateField('Fecha de Terminacion','fecha_terminacion','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha_terminacion',"Seleccione la Fecha de Terminacion del Convenio");
 $f1->jsDateField('Fecha de Paralizacion','fecha_paralizacion','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha_paralizacion',"Seleccione la Fecha de Paralizacion del Convenio");
 $f1->textArea('Motivo Paralizacion','motivo_paralizacion',_FH_STRING,30,3,"onkeyup=\"convenios.motivo_paralizacion.value=convenios.motivo_paralizacion.value.toUpperCase();\"");
+$f1->setHelpText('motivo_paralizacion',"En este campo introduce el Motivo de Paralizacion del Convenio.");
 $f1->jsDateField('Fecha de Reinicio','fecha_reinicio','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha_reinicio',"Seleccione la Fecha de Reinicio del Convenio");
 $f1->selectField('Estatus','estatus',$status,FH_NOT_EMPTY,true);
+$f1->setHelpText('estatus',"Seleccione el Estatus del Convenio");
 $f1->textArea('Plan','plan',_FH_STRING,30,3,"onkeyup=\"convenios.plan.value=convenios.plan.value.toUpperCase();\"");
+$f1->setHelpText('plan',"En este campo introduce el Plan del Convenio.");
 $f1->textArea('Descripcion','descripcion_trabajos',_FH_STRING,30,3,"onkeyup=\"convenios.descripcion_trabajos.value=convenios.descripcion_trabajos.value.toUpperCase();\"");
+$f1->setHelpText('descripcion_trabajos',"En este campo introduce la Descripcion de Trabajos del Convenio.");
 $f1->textArea('Observacion','observacion',_FH_STRING,30,3,"onkeyup=\"convenios.observacion.value=convenios.observacion.value.toUpperCase();\"");
+$f1->setHelpText('observacion',"En este campo introduce las Observaciones del Convenio.");
 $f1->setMask(
    " <tr>\n".
    "   <td> </td>\n".

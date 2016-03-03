@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 17:00:50
+<?php /* Smarty version 2.6.26, created on 2016-02-24 19:09:28
          compiled from rp_cons_dotacionesxfecha.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
@@ -6,6 +6,9 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div id="resultados_reporte">
+<h3>DOTACIONES POR FECHA DE SOLICITUD DESDE: <?php echo $this->_tpl_vars['fecha_ini']; ?>
+, HASTA: <?php echo $this->_tpl_vars['fecha_fin']; ?>
+</h3>
 <p>
 <div id = "indice">REPORTE DE DOTACIONES POR FECHA DE SOLICITUD</br>Fecha Inicial: <?php echo $this->_tpl_vars['fecha_ini']; ?>
 </br>Fecha Final: <?php echo $this->_tpl_vars['fecha_fin']; ?>

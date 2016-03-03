@@ -29,15 +29,25 @@ if (isset($_REQUEST['cod_dea']))
 	$f1->setValue('codigo_dea', $cod_dea);
 }
 $f1->textField('Codigo Proyecto','cod_proyecto',FH_STRING,50,255,"onkeyup=\"proyecto.cod_proyecto.value=proyecto.cod_proyecto.value.toUpperCase();\"");
+$f1->setHelpText('cod_proyecto',"En este campo introduce el Codigo del Proyecto");
 $f1->jsDateField('Fecha de Solicitud','fecha_solicitud','validafecha',1,'d-m-y',"20:00");
+$f1->setHelpText('fecha_solicitud',"Seleccione la Fecha de Solicitud del Proyecto");
 $f1->textArea('Descripcion de Solicitud','desc_solicitado',FH_STRING,30,3,"onkeyup=\"proyecto.desc_solicitado.value=proyecto.desc_solicitado.value.toUpperCase();\"");
+$f1->setHelpText('desc_solicitado',"En este campo introduce la Descripcion de la Solicitud del Proyecto");
 $f1->textField('Responsable','responsable',FH_STRING,50,100,"onkeyup=\"proyecto.responsable.value=proyecto.responsable.value.toUpperCase();\"");
+$f1->setHelpText('responsable',"En este campo introduce el Responsable del Proyecto");
 $f1->selectField('Estatus','estatus',$status,FH_NOT_EMPTY,true);
+$f1->setHelpText('estatus',"Seleccione el Estatus del Proyecto");
 $f1->jsDateField('Fecha de Respuesta','fecha_resp','',0,'d-m-y',"20:00");
+$f1->setHelpText('fecha_resp',"Seleccione la Fecha de Respuesta del Proyecto");
 $f1->textArea('Descripcion de Respuesta','desc_respuesta',FH_STRING,30,3,"onkeyup=\"proyecto.desc_respuesta.value=proyecto.desc_respuesta.value.toUpperCase();\"");
+$f1->setHelpText('desc_respuesta',"En este campo introduce la Descripcion de la Respuesta del Proyecto");
 $f1->textArea('Proyecto Actual','proy_actual',_FH_STRING,30,3,"onkeyup=\"proyecto.proy_actual.value=proyecto.proy_actual.value.toUpperCase();\"");
+$f1->setHelpText('proy_actual',"En este campo introduce el Proyecto Actual");
 $f1->textArea('Proyecto Propuesto','proy_propuesto',_FH_STRING,30,3,"onkeyup=\"proyecto.proy_propuesto.value=proyecto.proy_propuesto.value.toUpperCase();\"");
+$f1->setHelpText('proy_propuesto',"En este campo introduce el Proyecto Propuesto");
 $f1->textArea('Observacion','observacion',_FH_STRING,30,3,"onkeyup=\"proyecto.observacion.value=proyecto.observacion.value.toUpperCase();\"");
+$f1->setHelpText('observacion',"En este campo introduce las Observaciones del Proyecto");
 
 $f1->setMask(
    " <tr>\n".
