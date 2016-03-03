@@ -1,7 +1,6 @@
 {include file="cabecera.html"}
-<div id="resultados_reporte">
-<p>
-<div id = "indice">REPORTE DE DOTACIONES POR FECHA DE SOLICITUD</br>Fecha Inicial: {$fecha_ini}</br>Fecha Final: {$fecha_fin}</br></div>
+<div id = "indice">REPORTE DE DOTACIONES POR FECHA DE SOLICITUD</br>Fecha Inicial: {$fecha_ini}</br>Fecha Final: {$fecha_fin}</br>
+</div>
 </p>
 {if $datos}
 <div id="resultados">
@@ -37,7 +36,9 @@
 </table>
 </div>
 <p>
+<div id = "botonimprimir">
 <input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
+</div>
 {else}
 	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
 {/if}

@@ -22,7 +22,7 @@ $plantel_nombre = sql2row("SELECT nombre FROM plantel WHERE cod_dea = '$cod_dea'
 $f1=new FormHandler('dotacion',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
 $f1->borderStart('Agregar Dotacion');
-$f1->hiddenField('plantel_id');
+$f1->hiddenField('id',$_REQUEST['id']);
 if (isset($cod_dea))
 {
 	$plantel_nombre = sql2value("SELECT nombre FROM plantel WHERE cod_dea = '$cod_dea'");

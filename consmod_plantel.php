@@ -17,6 +17,7 @@ $f1  = new formHandler('busqueda_plantel',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
 $f1 -> borderStart('Busqueda de Plantel');
 $f1 -> textField('Texto a buscar','texto');
+$f1->setHelpText('texto','Por favor introduzca el nombre del plantel a consultar');
 $f1 -> submitButton('Continuar');
 $f1 -> borderStop();
 $f1 ->onCorrect('procesar');

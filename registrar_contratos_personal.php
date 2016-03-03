@@ -32,8 +32,11 @@ $f1->textField($star.'CIV','civ',FH_STRING,12,11,"onkeyup=\"contrato_personal.ci
 $f1->textField($star.'Nombre','nombre',FH_STRING,50,100,"onkeyup=\"contrato_personal.nombre.value=contrato_personal.nombre.value.toUpperCase();\"");
 $f1->textField($star.'Apellido','apellido',FH_STRING,50,100,"onkeyup=\"contrato_personal.apellido.value=contrato_personal.apellido.value.toUpperCase();\"");
 $f1->textField('Teléfono','tlf',_FH_DIGIT,15,11);
+$f1->setHelpText('tlf',"En este campo introduce el Numero de Telefono. Ejemplo: 04167896541");
 $f1->textField('Correo','correo',_FH_EMAIL,30,50,"onkeyup=\"contrato_personal.correo.value=contrato_personal.correo.value.toUpperCase();\"");
+$f1->setHelpText('correo',"En este campo introduce el Correo Electronico");
 $f1->selectField('Modalidad','modalidad',$modalidad,FH_NOT_EMPTY,true);
+$f1->setHelpText('modalidad',"Selecciona la Modalidad");
 $f1->addLine($star ." = Campos Requeridos Obligatoriamente");
 $f1->setMask(
    " <tr>\n".

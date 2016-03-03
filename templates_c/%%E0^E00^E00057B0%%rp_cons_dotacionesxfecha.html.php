@@ -1,15 +1,14 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 17:00:50
+<?php /* Smarty version 2.6.26, created on 2016-03-03 14:27:47
          compiled from rp_cons_dotacionesxfecha.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<div id="resultados_reporte">
-<p>
 <div id = "indice">REPORTE DE DOTACIONES POR FECHA DE SOLICITUD</br>Fecha Inicial: <?php echo $this->_tpl_vars['fecha_ini']; ?>
 </br>Fecha Final: <?php echo $this->_tpl_vars['fecha_fin']; ?>
-</br></div>
+</br>
+</div>
 </p>
 <?php if ($this->_tpl_vars['datos']): ?>
 <div id="resultados">
@@ -77,7 +76,9 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 </table>
 </div>
 <p>
+<div id = "botonimprimir">
 <input type="image" name="imprimir" src="imagenes/imprimir.gif" width="75" height="50" onclick="window.print();">
+</div>
 <?php else: ?>
 	<h3>NO SE ENCONTRÓ NINGUN DATO QUE CORRESPONDA, VERIFIQUE...</h3>
 <?php endif; ?>

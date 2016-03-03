@@ -1,6 +1,11 @@
 @media print{
-#cintillo,#baner,#titulo, #menu, #indice, #pie, #bannerpie, #logo {
+#cintillo,#titulo, #menu, #pie, #bannerpie, #botonimprimir, #logo {
 	display:none;
+}
+#indice{
+	display:inline;
+	text-align: center;
+	font: 90% sans-serif;
 }
 
 .enhancedtable{

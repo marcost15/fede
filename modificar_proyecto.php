@@ -45,6 +45,7 @@ $f1->textArea('Observacion','observacion',_FH_STRING,30,3,"onkeyup=\"proyecto.ob
 
 $f1->setValue('codigo_dea', $proyecto['codigo_dea']);
 $f1->setValue('plantel_nombre', $plantel_nombre['nombre']);
+$f1->setValue('cod_proyecto', $proyecto['cod_proyecto']);
 $f1->setValue('fecha_solicitud', $proyecto['fecha_solicitud']);
 $f1->setValue('desc_solicitado', $proyecto['desc_solicitado']);
 $f1->setValue('responsable', $proyecto['responsable']);
@@ -72,7 +73,7 @@ function procesar($d)
 	$resp = comparafecha($d['fecha_solicitud'],$d['fecha_resp']);
 	if ($resp == 1)
 	{
-		$_SESSION['mensaje']="LAS FECHAS NO PUEDE SER PROCESADA PORQUE LA DE SOLICITUD ES MAYOR A LA DE RESPUESTA";
+		$_SESSION['mensaje']="LAS FECHAS NO PUEDEN SER PROCESADAS PORQUE LA DE SOLICITUD ES MAYOR A LA DE RESPUESTA";
 		return false;
 	}
 	else

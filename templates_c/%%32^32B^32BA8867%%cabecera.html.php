@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-22 16:37:09
+<?php /* Smarty version 2.6.26, created on 2016-03-03 14:23:50
          compiled from cabecera.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'cabecera.html', 7, false),)), $this); ?>
@@ -12,7 +12,6 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 </title>
 		<link rel="stylesheet" type="text/css" href="./estilo/layout.css"/> 
 		<link rel="stylesheet" href="./estilo/tinydropdown.css" type="text/css" /><!-- Para el Menú -->
-		<link rel="stylesheet" type="text/css" href="./estilo/cnc.css"/> 
 		<link rel="stylesheet" type="text/css" href="./estilo/layoutprint.css" media="print"/>
 		<script type="text/javascript" src="./js/domtableenhance.js"></script>
 		<script type="text/javascript" src="../libreriasphp/FH3/FHTML/overlib/overlib.js"></script>
@@ -33,7 +32,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 <?php endif; ?></div><!-- titulo -->				
 		<div id="menu">
 			<?php if ($_SESSION['usuario']): ?><ul id="mimenu" class="mimenu">
-				<li title="Consultar / Modificar"><a href="consmod_plantel.php">Inicio</a></li>
+				<li title="Inicio"><a href="consmod_plantel.php">Inicio</a></li>
 				<li><span>Registrar</span>
 				<ul>
 					<li title="Registrar Plantel"><a href="registrar_plantel.php">Plantel</a></li>
@@ -45,14 +44,14 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 					</li>
 					<li><span>Inspectores </span>
 						<ul>
-							<li title="Agregar Empresa"><a href="registrar_contratos_personal.php">Agregar</a></li>
-							<li title="Consultar / Modificar Empresa"><a href="consmod_personal_inspector.php">Consultar / Modificar</a></li>
+							<li title="Agregar Personal"><a href="registrar_contratos_personal.php">Agregar</a></li>
+							<li title="Consultar / Modificar Personal"><a href="consmod_personal_inspector.php">Consultar / Modificar</a></li>
 						</ul>
 					</li>
 					<li><span>Consejo Comunal</span>
 					<ul>
-						<li title="Agregar Consejo"><a href="registrar_consejo.php">Agregar</a></li>
-						<li title="Consultar / Modificar Clientes"><a href="consmod_consejo.php">Consultar / Modificar</a></li>
+						<li title="Agregar Consejo Comunal"><a href="registrar_consejo.php">Agregar</a></li>
+						<li title="Consultar / Modificar Consejo Comunal"><a href="consmod_consejo.php">Consultar / Modificar</a></li>
 					</ul>
 				</li>
 				</ul>

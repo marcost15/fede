@@ -30,16 +30,27 @@ if (isset($_REQUEST['cod_dea']))
 	$f1->setValue('codigo_dea', $cod_dea);
 }
 $f1->textField('Codigo Evaluacion','cod_evaluacion',FH_STRING,50,255,"onkeyup=\"evaluacion.cod_evaluacion.value=evaluacion.cod_evaluacion.value.toUpperCase();\"");
+$f1->setHelpText('cod_evaluacion',"En este campo introduce el Codigo de la Evaluacion Tecnica");
 $f1->textField('Solicitado por','solicitado_por',FH_STRING,50,100,"onkeyup=\"evaluacion.solicitado_por.value=evaluacion.solicitado_por.value.toUpperCase();\"");
+$f1->setHelpText('solicitado_por',"En este campo introduce el Responsable de la Solicitud de la Evaluacion Tecnica");
 $f1->textField('Medio','medio',FH_STRING,50,100,"onkeyup=\"evaluacion.medio.value=evaluacion.medio.value.toUpperCase();\"");
+$f1->setHelpText('medio',"En este campo introduce el Medio de Solicitud de la Evaluacion Tecnica");
 $f1->jsDateField('Fecha Solicitud','fecha_solicitud','validafecha',1,'d-m-y',"20:00");
+$f1->setHelpText('fecha_solicitud',"Seleccione la Fecha de Solicitud de la Evaluacion Tecnica");
 $f1->textField('Modalidad Atencion','modalidad_atencion',FH_STRING,50,100,"onkeyup=\"evaluacion.modalidad_atencion.value=evaluacion.modalidad_atencion.value.toUpperCase();\"");
+$f1->setHelpText('modalidad_atencion',"En este campo introduce la Modalidad de Atencion de la Evaluacion Tecnica");
 $f1->textField('Descripcion Solicitud','descripcion_solicitud',FH_STRING,50,100,"onkeyup=\"evaluacion.descripcion_solicitud.value=evaluacion.descripcion_solicitud.value.toUpperCase();\"");
+$f1->setHelpText('descripcion_solicitud',"En este campo introduce la Descripcion de Solicitud para la Evaluacion Tecnica");
 $f1->selectField('Estatus','estatus',$status,FH_NOT_EMPTY,true);
+$f1->setHelpText('estatus',"Seleccione el Estatus de la Evaluacion Tecnica");
 $f1->jsDateField('Fecha de Entrega','fecha_entrega','validafecha',1,'d-m-y',"20:00");
+$f1->setHelpText('fecha_entrega',"Seleccione la Fecha de Entrega de la Evaluacion Tecnica");
 $f1->jsDateField('Fecha de Respuesta','fecha_respuesta','validafecha',1,'d-m-y',"20:00");
+$f1->setHelpText('fecha_respuesta',"Seleccione la Fecha de Respuesta de la Evaluacion Tecnica");
 $f1->textArea('Descripcion Respuesta','descripcion_respuesta',_FH_STRING,30,3,"onkeyup=\"evaluacion.descripcion_respuesta.value=evaluacion.descripcion_respuesta.value.toUpperCase();\"");
+$f1->setHelpText('descripcion_respuesta',"En este campo introduce la Descripcion de Respuesta de la Evaluacion Tecnica");
 $f1->textArea('Observacion','observacion',_FH_STRING,30,3,"onkeyup=\"evaluacion.observacion.value=evaluacion.observacion.value.toUpperCase();\"");
+$f1->setHelpText('observacion',"En este campo introduce las Observaciones de la Evaluacion Tecnica");
 $f1->setMask(
    " <tr>\n".
    "   <td> </td>\n".

@@ -22,7 +22,9 @@ $f1->textField($star.'Razon Social','nombre',FH_STRING,50,100,"onkeyup=\"consejo
 $f1->textField($star.'Vocero','vocero',FH_STRING,30,35,"onkeyup=\"consejo_comunal.vocero.value=consejo_comunal.vocero.value.toUpperCase();\"");
 $f1->textField($star.'Cargo','cargo',FH_STRING,30,35,"onkeyup=\"consejo_comunal.cargo.value=consejo_comunal.cargo.value.toUpperCase();\"");
 $f1->textField('Correo','correo',_FH_EMAIL,30,50);
+$f1->setHelpText('correo',"En este campo introduce el Correo Electronico del Vocero");
 $f1->textField('Teléfono','telf',_FH_DIGIT,15,11);
+$f1->setHelpText('telf',"En este campo introduce el Numero de Telefono de contacto. Ejemplo: 04167896541");
 $f1->addLine($star ." = Campos Requeridos Obligatoriamente");
 $f1->setMask(
    " <tr>\n".

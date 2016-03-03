@@ -27,7 +27,6 @@ foreach ($datos as $i=>$c)
 }
 
 $smarty->assign('datos',$datos);
-$smarty->assign('fondoreporte',1);
 $smarty->assign('fecha_ini',$fecha_ini);
 $smarty->assign('fecha_fin',$fecha_fin);
 $smarty->disp();
